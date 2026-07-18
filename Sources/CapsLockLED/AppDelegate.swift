@@ -64,7 +64,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         menu.addItem(.separator())
 
         let setupHooksItem = NSMenuItem(
-            title: "Set Up Claude Code Hooks",
+            title: "Set Up Antigravity Hooks",
             action: #selector(setUpHooks),
             keyEquivalent: ""
         )
@@ -72,7 +72,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         menu.addItem(setupHooksItem)
 
         let removeHooksItem = NSMenuItem(
-            title: "Remove Claude Code Hooks",
+            title: "Remove Antigravity Hooks",
             action: #selector(removeHooks),
             keyEquivalent: ""
         )
