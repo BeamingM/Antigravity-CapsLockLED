@@ -43,3 +43,9 @@ This version was adapted by the repository owner with the help of **Antigravity 
 - `CapsLockLED.app` — a menu bar app (`LSUIElement`). Talks to the keyboard's HID LED element via IOKit (`IOHIDDeviceSetValue`) to toggle the Caps Lock light without changing the software Caps Lock state.
 - `caps-signal` — a tiny CLI inside the bundle (`Contents/MacOS/caps-signal`). The `.zshrc` hooks call it to post a `DistributedNotificationCenter` message that the running app reacts to.
 - `HookInstaller.swift` — The logic behind "Set Up Antigravity Hooks". It reads your `~/.zshrc` and appends a bash function wrapper for `agy` that calls `caps-signal working` before the agent runs, and `caps-signal done` when it exits.
+
+---
+
+## 🤝 Contributors
+* **[Chakarin](https://github.com/BeamingM)** - Project Owner & Adapter
+* **Antigravity CLI (AGY)** - AI Pair Programmer & Code Contributor
