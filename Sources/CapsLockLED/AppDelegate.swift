@@ -49,8 +49,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         let testItem = NSMenuItem(title: "Test Blink", action: nil, keyEquivalent: "")
         let testMenu = NSMenu()
         for (title, selector) in [
-            ("Working", #selector(testWorking)),
-            ("Needs Input", #selector(testNeedsInput)),
+            ("Active", #selector(testActive)),
             ("Done", #selector(testDone)),
             ("Off", #selector(testIdle))
         ] {
@@ -118,8 +117,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         return menu
     }
 
-    @objc private func testWorking() { blinkEngine.setState(.working) }
-    @objc private func testNeedsInput() { blinkEngine.setState(.needsInput) }
+    @objc private func testActive() { blinkEngine.setState(.active) }
     @objc private func testDone() { blinkEngine.setState(.done) }
     @objc private func testIdle() { blinkEngine.setState(.idle) }
 
@@ -175,14 +173,14 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         } else {
             switch state {
             case .idle: symbolName = "circle"; color = .secondaryLabelColor
-            case .working: symbolName = "circle.fill"; color = .systemBlue
-            case .needsInput: symbolName = "circle.fill"; color = .systemOrange
+            case .active: symbolName = "circle.fill"; color = .systemBlue
             case .done: symbolName = "circle.fill"; color = .systemGreen
             }
         }
+        var displayTitle = state.rawValue
         statusItem.button?.title = ""
         statusItem.button?.image = symbolImage(name: symbolName, color: color)
-        statusItem.menu?.item(withTag: 100)?.title = "State: \(state.rawValue)"
+        statusItem.menu?.item(withTag: 100)?.title = "State: \(displayTitle)"
     }
 
     private func symbolImage(name: String, color: NSColor) -> NSImage? {

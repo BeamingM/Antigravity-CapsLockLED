@@ -2,8 +2,7 @@ import Foundation
 
 enum LEDState: String {
     case idle
-    case working
-    case needsInput = "needs-input"
+    case active
     case done
 }
 
@@ -28,10 +27,8 @@ final class BlinkEngine {
         switch newState {
         case .idle:
             setLED(false)
-        case .working:
+        case .active:
             startBlinking(interval: 0.5)
-        case .needsInput:
-            startBlinking(interval: 0.1)
         case .done:
             playDoneSequence()
         }

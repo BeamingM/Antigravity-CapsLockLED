@@ -38,7 +38,7 @@ enum HookInstaller {
         
         let hookScript = """
         \(hookStart)agy() {
-            "\(capsSignal)" working
+            "\(capsSignal)" active
             command agy "$@"
             "\(capsSignal)" done
         }
